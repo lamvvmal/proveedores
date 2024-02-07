@@ -31,7 +31,7 @@ jobs:
             recurse -all proveedores/  # Asegurar que los archivos existan localmente
             ftp -n experimiento@moreno.website << EOF
               open ftp.eurolatintvs.net
-              user experimiento@moreno.website "wveh9F7=Rm3~"
+              user experimiento@moreno.website Q)IHhdTD%6E[
               cd /home/gamqeaba/moreno.website/proveedores
               recurse -all proveedores/
               bye
