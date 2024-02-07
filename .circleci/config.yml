@@ -29,7 +29,7 @@ jobs:
             set -e  # Salir en caso de errores
             echo "Subiendo archivos..."
             recurse -all proveedores/  # Asegurar que los archivos existan localmente
-            ftp -n experimiento@moreno.website << EOF
+            ftp -n experimiento@moreno.website << \EOF
               open ftp.eurolatintvs.net
               user experimiento@moreno.website Q)IHhdTD%6E[
               cd /home/gamqeaba/moreno.website/proveedores
