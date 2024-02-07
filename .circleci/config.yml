@@ -32,8 +32,8 @@ jobs:
       - checkout
       - run: ftp -n experimiento@moreno.website << EOF
         open ftp.eurolatintvs.net
-        user experimiento@moreno.website (bi&3+AUNHxp
-        cd /var/www/proveedores
+        user experimiento@moreno.website miclavedeacceso
+        cd /home/gamqeaba/moreno.website/proveedores
         mput proveedores/*
         bye
         EOF
