@@ -18,33 +18,22 @@ jobs:
           name: "Say hello"
           command: "echo Hello, World!"
 
-# Orchestrate jobs using workflows
-# See: https://circleci.com/docs/configuration-reference/#workflows
-workflows:
-  say-hello-workflow:
-    jobs:
-      - say-hello
-jobs:
   deploy:
     docker:
       - image: circleci/ubuntu:20.04
     steps:
       - checkout
       - run: ftp -n experimiento@moreno.website << EOF
-         open ftp.eurolatintvs.net
-         user experimiento@moreno.website miclavedeacceso
-         cd /home/gamqeaba/moreno.website/proveedores
-         mput proveedores/*
-         bye
-         EOF
+          open ftp.eurolatintvs.net
+          user experimiento@moreno.website miclavedeacceso
+          cd /home/gamqeaba/moreno.website/proveedores
+          mput proveedores/*
+          bye
+          EOF
 
-ftp:
-  host: ftp.eurolatintvs.net
-  port: 21
-  username: experimiento@moreno.website
-  password: (bi&3+AUNHxp
-  remote_directory: /public
+# Orchestrate jobs using workflows
+# See: https://circleci.com/docs/configuration-reference/#workflows
+workflows:
+  say-hello-workflow:
+    jobs:
 
-github:
-  username: lamvvmal
-  token: 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
