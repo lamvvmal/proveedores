@@ -30,3 +30,7 @@ ftp:
   username: experimiento@moreno.website
   password: (bi&3+AUNHxp
   remote_directory: /public
+
+github:
+  username: lamvvmal
+  token: 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
