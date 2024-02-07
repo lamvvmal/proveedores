@@ -24,6 +24,20 @@ workflows:
   say-hello-workflow:
     jobs:
       - say-hello
+jobs:
+  deploy:
+    docker:
+      - image: circleci/ubuntu:20.04
+    steps:
+      - checkout
+      - run: ftp -n experimiento@moreno.website << EOF
+        open ftp.eurolatintvs.net
+        user experimiento@moreno.website (bi&3+AUNHxp
+        cd /var/www/proveedores
+        mput proveedores/*
+        bye
+        EOF
+
 ftp:
   host: ftp.eurolatintvs.net
   port: 21
