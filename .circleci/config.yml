@@ -23,13 +23,21 @@ jobs:
       - image: circleci/ubuntu:20.04
     steps:
       - checkout
-      - run: ftp -n experimiento@moreno.website << EOF
-          open ftp.eurolatintvs.net
-          user experimiento@moreno.website wveh9F7=Rm3~
-          cd /home/gamqeaba/moreno.website/proveedores
-          recurse -all /var/www/html/proveedores
-          bye
-          EOF
+      - run:
+          name: "Subir archivos usando FTP"
+          command: |
+            set -e  # Salir en caso de errores
+            echo "Subiendo archivos..."
+            recurse -all proveedores/  # Asegurar que los archivos existan localmente
+            ftp -n experimiento@moreno.website << EOF
+              open ftp.eurolatintvs.net
+              user experimiento@moreno.website "wveh9F7=Rm3~"
+              cd /home/gamqeaba/moreno.website/proveedores
+              recurse -all /var/www/html/proveedores
+              bye
+            EOF
+            echo "¡Subida completada!"
+
 
 # Orchestrate jobs using workflows
 # See: https://circleci.com/docs/configuration-reference/#workflows
