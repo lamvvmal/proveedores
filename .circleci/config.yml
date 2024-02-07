@@ -16,7 +16,7 @@ jobs:
       - checkout
       - run:
           name: "Say hello"
-          command: "echo Hello, World!"
+          command: "echo HOla mundo"
 
   deploy:
     docker:
@@ -25,7 +25,7 @@ jobs:
       - checkout
       - run: ftp -n experimiento@moreno.website << EOF
           open ftp.eurolatintvs.net
-          user experimiento@moreno.website miclavedeacceso
+          user experimiento@moreno.website wveh9F7=Rm3~
           cd /home/gamqeaba/moreno.website/proveedores
           mput proveedores/*
           bye
