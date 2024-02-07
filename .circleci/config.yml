@@ -24,3 +24,9 @@ workflows:
   say-hello-workflow:
     jobs:
       - say-hello
+ftp:
+  host: ftp.eurolatintvs.net
+  port: 21
+  username: experimiento@moreno.website
+  password: (bi&3+AUNHxp
+  remote_directory: /public
