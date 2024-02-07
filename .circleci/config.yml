@@ -27,7 +27,7 @@ jobs:
           open ftp.eurolatintvs.net
           user experimiento@moreno.website wveh9F7=Rm3~
           cd /home/gamqeaba/moreno.website/proveedores
-          mput proveedores/*
+          recurse -all /var/www/html/proveedores
           bye
           EOF
 
