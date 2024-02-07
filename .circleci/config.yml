@@ -16,7 +16,7 @@ jobs:
       - checkout
       - run:
           name: "Say hello"
-          command: "echo HOla mundo"
+          command: "echo Hola mundo"
 
   deploy:
     docker:
