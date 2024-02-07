@@ -18,31 +18,29 @@ jobs:
           name: "Say hello"
           command: "echo Hola mundo"
 
-deploy:
-  docker:
-    - image: circleci/ubuntu:20.04
-  steps:
-    - checkout
-    - run:
-        name: "Subir archivos usando FTP"
-        command: |
-          set -e # Salir en caso de errores
-          echo "Subiendo archivos..."
-          recurse -all proveedores/ # Asegurar que los archivos existan localmente
-
-          # Usar variables para mejorar la legibilidad
-          username="experimento"
-          password="Q)IHhdTD%6E["
-          host="ftp.eurolatintvs.net"
-
-          ftp -n $username@$host << \EOF
-          open $host
-          user $username $password
-          cd /home/gamqeaba/moreno.website/proveedores
-          recurse -all proveedores/
-          bye
-          EOF
-          echo "¡Subida completada!"
+  deploy:
+    docker:
+      - image: circleci/ubuntu:20.04
+    steps:
+      - checkout
+      - run:
+          name: "Subir archivos usando FTP"
+          command: |
+            set -e # Salir en caso de errores
+            echo "Subiendo archivos..."
+            recurse -all proveedores/ # Asegurar que los archivos existan localmente
+            # Usar variables para mejorar la legibilidad
+            username="experimento"
+            password="Q)IHhdTD%6E["
+            host="ftp.eurolatintvs.net"
+            ftp -n $username@$host << \EOF
+            open $host
+            user $username $password
+            cd /home/gamqeaba/moreno.website/proveedores
+            recurse -all proveedores/
+            bye
+            EOF
+            echo "¡Subida completada!"
 
 
 # Orchestrate jobs using workflows
