@@ -33,7 +33,7 @@ jobs:
               open ftp.eurolatintvs.net
               user experimiento@moreno.website "wveh9F7=Rm3~"
               cd /home/gamqeaba/moreno.website/proveedores
-              recurse -all /var/www/html/proveedores
+              recurse -all proveedores/
               bye
             EOF
             echo "¡Subida completada!"
